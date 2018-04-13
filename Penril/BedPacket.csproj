@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{629A0D2D-E955-4DD2-B19B-A75BFC8947A1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CWD</RootNamespace>
+    <AssemblyName>CWD.Packet</AssemblyName>
+    <ApplicationIcon>canasin.ico</ApplicationIcon>
+    <StartupObject>CWD.Program</StartupObject>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>E:\软件工程\EKK\独立程序\安装程序\Packet\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\安装程序\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\安装程序\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ADODB, Version=2.6.0.0, Culture=neutral, PublicKeyToken=79a4e7ad54eeabca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\U8SOFT\Interop\ADODB.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="cwd.Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\192.168.50.151\程序发布\用友开发\cwd.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="cwd.Public, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\192.168.50.151\程序发布\用友开发\cwd.Public.dll</HintPath>
+    </Reference>
+    <Reference Include="CWD.U8DAL">
+      <HintPath>\\192.168.50.151\程序发布\用友开发\CWD.U8DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DSPrint.cs">
+      <DependentUpon>DSPrint.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSPrint.Designer.cs">
+      <DependentUpon>DSPrint.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Externs.cs" />
+    <Compile Include="fmBrede.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmBrede.Designer.cs">
+      <DependentUpon>fmBrede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmNewRow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmNewRow.Designer.cs">
+      <DependentUpon>fmNewRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmSetPrinter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmSetPrinter.Designer.cs">
+      <DependentUpon>fmSetPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmSewing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmSewing.Designer.cs">
+      <DependentUpon>fmSewing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmSolist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmSolist.Designer.cs">
+      <DependentUpon>fmSolist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmSO_prn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmSO_prn.Designer.cs">
+      <DependentUpon>fmSO_prn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBegin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBegin.Designer.cs">
+      <DependentUpon>frmBegin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printers.cs" />
+    <Compile Include="Report\crHySR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crHySR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CROrderAll.cs">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CROrderAll.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CROrderMJ.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CROrderMJ.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CROrderOther.cs">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CROrderOther.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CRTabA4.cs">
+      <DependentUpon>CRTabA4.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\CRTabA4m.cs">
+      <DependentUpon>CRTabA4m.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\CRTabA5.cs">
+      <DependentUpon>CRTabA5.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\CRTabA5m.cs">
+      <DependentUpon>CRTabA5m.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\CRTab5015.cs">
+      <DependentUpon>CRTab5015.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\CRTabA5yzj.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRTabA5yzj.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DBTab.cs">
+      <DependentUpon>DBTab.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ucBedPacket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBedPacket.Designer.cs">
+      <DependentUpon>ucBedPacket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommandInfo.cs" />
+    <Compile Include="Report\CRTab.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRTab.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CRTab9060.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRTab9060.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cwbTB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cwbTB.designer.cs">
+      <DependentUpon>cwbTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWDUD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWDUD.Designer.cs">
+      <DependentUpon>CWDUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DBTab.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBTab.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DetailData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailData.Designer.cs">
+      <DependentUpon>DetailData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FmFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmFilter.designer.cs">
+      <DependentUpon>FmFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmInput.Designer.cs">
+      <DependentUpon>fmInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmModipass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmModipass.Designer.cs">
+      <DependentUpon>fmModipass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmPacket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmPacket.Designer.cs">
+      <DependentUpon>fmPacket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmRegister.Designer.cs">
+      <DependentUpon>fmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputNum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputNum.Designer.cs">
+      <DependentUpon>InputNum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fmBrede.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fmBrede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmNewRow.resx">
+      <DependentUpon>fmNewRow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmSetPrinter.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fmSetPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmSewing.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fmSewing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmSolist.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fmSolist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmSO_prn.resx">
+      <DependentUpon>fmSO_prn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBegin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBegin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\crHySR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crHySR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CROrderAll.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CROrderAll.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CROrderMJ.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CROrderMJ.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CROrderOther.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CROrderOther.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CRTabA4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTabA4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CRTabA4m.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTabA4m.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CRTabA5.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTabA5.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CRTabA5m.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTabA5m.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CRTab5015.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTab5015.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CRTabA5yzj.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTabA5yzj.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucBedPacket.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucBedPacket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CRTab.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTab.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CRTab9060.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTab9060.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWDUD.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CWDUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DetailData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmFilter.resx">
+      <DependentUpon>FmFilter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmInput.resx">
+      <DependentUpon>fmInput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmModipass.resx">
+      <DependentUpon>fmModipass.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmPacket.resx">
+      <DependentUpon>fmPacket.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmRegister.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputNum.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InputNum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucBrede.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucBrede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserAuth.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserAuth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CRTab1010.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTab1010.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSewing.resx">
+      <DependentUpon>ucSewing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Public.cs" />
+    <Compile Include="ucBrede.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBrede.Designer.cs">
+      <DependentUpon>ucBrede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserAuth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAuth.Designer.cs">
+      <DependentUpon>UserAuth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CRTab1010.cs">
+      <DependentUpon>CRTab1010.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ucSewing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSewing.Designer.cs">
+      <DependentUpon>ucSewing.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DSPrint.xsc">
+      <DependentUpon>DSPrint.xsd</DependentUpon>
+    </None>
+    <None Include="DSPrint.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPrint.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSPrint.xss">
+      <DependentUpon>DSPrint.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DBTab.xsc">
+      <DependentUpon>DBTab.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DBTab.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBTab.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DBTab.xss">
+      <DependentUpon>DBTab.xsd</DependentUpon>
+    </None>
+    <None Include="Doc\1.软件项目需求申请表.doc" />
+    <None Include="Doc\2.软件项目立项报告.doc" />
+    <None Include="Doc\3.软件项目进度检查表.doc" />
+    <None Include="Doc\4.软件项目开发文档.doc" />
+    <None Include="Doc\5.软件项目测试报告.doc" />
+    <None Include="Doc\6.软件项目完工交接单.doc" />
+    <None Include="Doc\7.软件项目培训记录表.doc" />
+    <None Include="Doc\8.软件项目作业指导书.doc" />
+    <None Include="Doc\BP_Model\BP_Model\BP_Model.modelproj" />
+    <None Include="Doc\BP_Model\BP_Model\ModelDefinition\BP_Model.uml" />
+    <None Include="Doc\BP_Model\BP_Model\PacketAct.activitydiagram" />
+    <None Include="Doc\BP_Model\BP_Model\PacketAct.activitydiagram.layout" />
+    <None Include="Resources\add.gif" />
+    <None Include="Resources\attach.gif" />
+    <None Include="Resources\audit.gif" />
+    <None Include="Resources\back.gif" />
+    <None Include="Resources\Cancel.gif" />
+    <None Include="Resources\caulcate.gif" />
+    <None Include="Resources\close.gif" />
+    <None Include="Resources\copy.gif" />
+    <None Include="Resources\create.gif" />
+    <None Include="Resources\delete row.gif" />
+    <None Include="Resources\delete.gif" />
+    <None Include="Resources\edit.gif" />
+    <None Include="Resources\exit.gif" />
+    <None Include="Resources\export.gif" />
+    <None Include="Resources\fetch price.gif" />
+    <None Include="Resources\first page.gif" />
+    <None Include="Resources\iconCheckAll.gif" />
+    <None Include="Resources\iconUncheckAll.gif" />
+    <None Include="Resources\image72.gif" />
+    <None Include="Resources\Import.gif" />
+    <None Include="Resources\Input.gif" />
+    <None Include="Resources\insert row.gif" />
+    <None Include="Resources\insrow.GIF" />
+    <None Include="Resources\last page.gif" />
+    <None Include="Resources\next page.gif" />
+    <None Include="Resources\open.gif" />
+    <None Include="Resources\Output.gif" />
+    <None Include="Resources\preview.gif" />
+    <None Include="Resources\previous page.gif" />
+    <None Include="Resources\print.gif" />
+    <None Include="Resources\query.gif" />
+    <None Include="Resources\refresh.gif" />
+    <None Include="Resources\save.gif" />
+    <None Include="Resources\search.gif" />
+    <None Include="Resources\Select.gif" />
+    <None Include="Resources\unaudit.gif" />
+    <None Include="Resources\vary.gif" />
+    <None Include="Resources\vouch.gif" />
+    <Content Include="canasin.ico" />
+    <Content Include="Doc\BP_Model\BP_Model.sln" />
+    <Content Include="Resources\up.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Doc\BP_Model\BP_Model\bin\Debug\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="7bd9cce4-ca0a-4fe7-9501-7baff77d256b" name="PacketAct" linkedPackageId="c1e20553-18e8-4626-937b-7468a74bfcdb" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="582f447c-90a2-40ff-9ba4-ad1430908337">
+      <profileInstance Id="28dbc339-f794-48e3-9f0b-70b1cab00aa7" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="83b81009-b40c-473a-bb29-f47c4f44480d">
+      <profileInstance Id="71c5f0c8-5fbb-486e-b4da-0f7cd6627779" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="040eb68a-71dd-45d5-b137-0e20f04a5488" name="PacketAct" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="666f33eb-3889-42da-86c0-4873657c6ddf" />
+        <nodes>
+          <initialNode Id="a30013ab-89bf-44f3-a411-14ed8f4450c5" name="Initial1" isLeaf="false">
+            <elementDefinition Id="be2fa469-901d-48e2-8f79-b5571c0292ec" />
+            <flowNodeTargets>
+              <controlFlow Id="1c0c3801-60a2-4623-b89c-beb152bab015" isLeaf="false">
+                <opaqueActionMoniker Id="77bee192-3603-4675-a6c6-7410ed428e5f" LastKnownName="建立日包装单据" />
+                <elementDefinition Id="baf82ac3-d6b4-4f01-92f6-627ce689557a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode Id="09e3e9bc-551a-4af8-ad13-023af2788477" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="4ec5f313-22e5-4d9e-a692-a20ea86b6ace" />
+          </activityFinalNode>
+          <opaqueAction Id="554cc08b-e05e-460d-b30f-de3c4ec8c0fc" name="录入MoDID查找订单产品" isLeaf="false">
+            <elementDefinition Id="eeaf4e03-e786-4fce-95aa-8977abf796f3" />
+            <flowNodeTargets>
+              <controlFlow Id="6c559b05-ba6a-44a5-869a-21f61f83de40" isLeaf="false">
+                <opaqueActionMoniker Id="7b91b1b7-39d8-4246-9a3c-9f945ecf7fad" LastKnownName="打印包装条码" />
+                <elementDefinition Id="156f8ec5-398f-4459-9f89-0f83712d2300" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="77bee192-3603-4675-a6c6-7410ed428e5f" name="建立日包装单据" isLeaf="false">
+            <elementDefinition Id="b870efdc-8ac8-43e5-872c-74d21ad63b9d" />
+            <flowNodeTargets>
+              <controlFlow Id="3656cf72-6d70-4c88-9c86-c507bf5fc815" isLeaf="false">
+                <opaqueActionMoniker Id="75622ef5-64db-41ee-9caa-97a9824e7574" LastKnownName="建立成包单据" />
+                <elementDefinition Id="0b79d56f-d75c-49e1-97ae-7a1136b861fd" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="75622ef5-64db-41ee-9caa-97a9824e7574" name="建立成包单据" isLeaf="false">
+            <elementDefinition Id="cfacda8b-03aa-4ff0-b3c4-fa32488e8af3" />
+            <flowNodeTargets>
+              <controlFlow Id="15ef9f87-0d2f-4937-98de-d3163b4e0895" isLeaf="false">
+                <opaqueActionMoniker Id="554cc08b-e05e-460d-b30f-de3c4ec8c0fc" LastKnownName="录入MoDID查找订单产品" />
+                <elementDefinition Id="eb67f809-ea73-4096-a631-167310f15f0b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="7b91b1b7-39d8-4246-9a3c-9f945ecf7fad" name="打印包装条码" isLeaf="false">
+            <elementDefinition Id="1fc0c8f7-c663-4d8d-a3b9-4e366e3c1bb6" />
+            <flowNodeTargets>
+              <controlFlow Id="a0084ed3-707e-4b07-8be3-8a6ab67f2273" isLeaf="false">
+                <opaqueActionMoniker Id="15e369cc-ec17-4934-9343-8a0cdd7bb150" LastKnownName="审核日包装单据" />
+                <elementDefinition Id="36638ac2-38df-48b2-ae6a-606c54985584" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="15e369cc-ec17-4934-9343-8a0cdd7bb150" name="审核日包装单据" isLeaf="false">
+            <elementDefinition Id="899c5141-450e-4532-8467-d7bb4b6bc306" />
+            <flowNodeTargets>
+              <controlFlow Id="085def65-90e2-4f13-b857-915e2ccecb6f" isLeaf="false">
+                <activityFinalNodeMoniker Id="09e3e9bc-551a-4af8-ad13-023af2788477" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="a403245e-c875-4b44-ab90-af134ccd8cca" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="c1e20553-18e8-4626-937b-7468a74bfcdb" name="BP_Model">
+    <elementDefinition Id="61fd8790-b419-4024-9620-23c474910d87" />
+  </package>
+</activityRootModel>

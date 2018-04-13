@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PacketAct">
+  <activityRootModelMoniker Id="7bd9cce4-ca0a-4fe7-9501-7baff77d256b" />
+  <nestedChildShapes>
+    <initialNodeShape Id="5b227fda-e5d6-4189-a853-816273ab06ca" absoluteBounds="2.5, 0.5, 0.125, 0.125" customColor="89, 89, 89">
+      <initialNodeMoniker Id="a30013ab-89bf-44f3-a411-14ed8f4450c5" LastKnownName="Initial1" />
+    </initialNodeShape>
+    <activityFinalNodeShape Id="12390c10-07ce-4f99-822c-a2692eee6e49" absoluteBounds="6.5, 1.625, 0.125, 0.125" customColor="89, 89, 89">
+      <activityFinalNodeMoniker Id="09e3e9bc-551a-4af8-ad13-023af2788477" LastKnownName="ActivityFinal1" />
+    </activityFinalNodeShape>
+    <actionShape Id="bac2aab3-4d70-4d7b-9fe1-c735d1922fa5" absoluteBounds="3.25, 1.875, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="554cc08b-e05e-460d-b30f-de3c4ec8c0fc" LastKnownName="录入MoDID查找订单产品" />
+    </actionShape>
+    <actionShape Id="d95ca3ef-28c1-4ab8-8173-478853029197" absoluteBounds="3.25, 0.625, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="77bee192-3603-4675-a6c6-7410ed428e5f" LastKnownName="建立日包装单据" />
+    </actionShape>
+    <actionShape Id="ce2b6466-e391-45b6-965a-568b2a00c54c" absoluteBounds="3.25, 1.25, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="75622ef5-64db-41ee-9caa-97a9824e7574" LastKnownName="建立成包单据" />
+    </actionShape>
+    <actionShape Id="de8bf2c7-5e0c-4c4d-92e6-bf5ab578e21e" absoluteBounds="3.25, 2.5, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="7b91b1b7-39d8-4246-9a3c-9f945ecf7fad" LastKnownName="打印包装条码" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(2.625 : 0.5625); (3 : 0.5625); (3 : 0.8125); (3.25 : 0.8125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="1c0c3801-60a2-4623-b89c-beb152bab015" />
+      <relativeChildShapes />
+      <nodes>
+        <initialNodeShapeMoniker Id="5b227fda-e5d6-4189-a853-816273ab06ca" />
+        <actionShapeMoniker Id="d95ca3ef-28c1-4ab8-8173-478853029197" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(3.8125 : 1); (3.8125 : 1.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="3656cf72-6d70-4c88-9c86-c507bf5fc815" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="d95ca3ef-28c1-4ab8-8173-478853029197" />
+        <actionShapeMoniker Id="ce2b6466-e391-45b6-965a-568b2a00c54c" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(3.8125 : 1.625); (3.8125 : 1.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="15ef9f87-0d2f-4937-98de-d3163b4e0895" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="ce2b6466-e391-45b6-965a-568b2a00c54c" />
+        <actionShapeMoniker Id="bac2aab3-4d70-4d7b-9fe1-c735d1922fa5" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(3.8125 : 2.25); (3.8125 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="6c559b05-ba6a-44a5-869a-21f61f83de40" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="bac2aab3-4d70-4d7b-9fe1-c735d1922fa5" />
+        <actionShapeMoniker Id="de8bf2c7-5e0c-4c4d-92e6-bf5ab578e21e" />
+      </nodes>
+    </controlFlowConnector>
+    <actionShape Id="5750bc68-2d1f-4bc5-b3eb-c697b5c983de" absoluteBounds="5.125, 0.625, 1.125, 0.375" customColor="161, 199, 231">
+      <opaqueActionMoniker Id="15e369cc-ec17-4934-9343-8a0cdd7bb150" LastKnownName="审核日包装单据" />
+    </actionShape>
+    <controlFlowConnector edgePoints="[(4.375 : 2.6875); (5.6875 : 2.6875); (5.6875 : 1)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="a0084ed3-707e-4b07-8be3-8a6ab67f2273" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="de8bf2c7-5e0c-4c4d-92e6-bf5ab578e21e" />
+        <actionShapeMoniker Id="5750bc68-2d1f-4bc5-b3eb-c697b5c983de" />
+      </nodes>
+    </controlFlowConnector>
+    <controlFlowConnector edgePoints="[(6.25 : 0.8125); (6.57727197369672 : 0.8125); (6.57727197369672 : 1.62677077480238)]" fixedFrom="Algorithm" fixedTo="Caller" customColor="Black">
+      <controlFlowMoniker Id="085def65-90e2-4f13-b857-915e2ccecb6f" />
+      <relativeChildShapes />
+      <nodes>
+        <actionShapeMoniker Id="5750bc68-2d1f-4bc5-b3eb-c697b5c983de" />
+        <activityFinalNodeShapeMoniker Id="12390c10-07ce-4f99-822c-a2692eee6e49" />
+      </nodes>
+    </controlFlowConnector>
+  </nestedChildShapes>
+</activityDiagram>
